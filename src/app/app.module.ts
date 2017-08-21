@@ -6,12 +6,14 @@ import { MaterialModule } from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { IndexComponent } from './index/index.component';
+// import { IndexComponent } from './index/index.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    IndexComponent
+    // IndexComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
