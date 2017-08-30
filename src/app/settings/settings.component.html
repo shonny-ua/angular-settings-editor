@@ -1,3 +1,30 @@
 <p>
   settings works!
 </p>
+<div style="float: right;"><p style="font-weight: bold;">Settings:</p>{{ settings | json }}
+	<div *ngFor="let setting of settings | keyval">
+		<div class="sub1">{{setting.key}}</div>
+		<div *ngFor="let setVal of setting.value | keyval">
+			<div class="sub2">{{ setVal.key }} - {{ setVal.value }}</div>
+		</div>
+	</div>
+</div>
+<p style="font-weight: bold;">Meta:</p>
+<div *ngFor="let editor of meta.editors">
+	<div>{{editor.id}}</div>
+	<div class="sub1">{{editor.dataType}}</div>
+	<div class="sub1">{{editor.kind}}</div>
+	<div *ngFor="let editorItem of editor.items | keyval">
+		<div class="sub1">{{ editorItem.key }} - {{ editorItem.value }}</div>
+	</div>
+</div>
+<div *ngFor="let group of meta.groups">
+	<div>{{group.id}}</div>
+	<div class="sub1">{{group.caption}}</div>
+	<div *ngFor="let groupItem of group.items">
+		<div class="sub1">{{groupItem.id}}</div>
+		<div class="sub2">{{groupItem.caption}}</div>
+		<div class="sub2">{{groupItem.dataType}}</div>
+		<div class="sub2">{{groupItem.defVal}}</div>
+	</div>
+</div>

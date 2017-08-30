@@ -3,17 +3,23 @@ import { NgModule } from '@angular/core';
 
 import { MaterialModule } from '@angular/material';
 
+import { KeyValPipe } from './lib/pipes/keyval';
+
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 // import { IndexComponent } from './index/index.component';
 import { SettingsComponent } from './settings/settings.component';
+// import { SettingsService } from './settings/settings.service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     // IndexComponent,
-    SettingsComponent
+    SettingsComponent,
+
+    KeyValPipe
   ],
   imports: [
     BrowserModule,
