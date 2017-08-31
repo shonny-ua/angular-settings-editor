@@ -1,7 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule }   from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialModule } from '@angular/material';
+import { MdInputModule } from '@angular/material';
 
 import { KeyValPipe } from './lib/pipes/keyval';
 
@@ -23,8 +26,12 @@ import { SettingsComponent } from './settings/settings.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    FormsModule,
+
     MaterialModule,
-    AppRoutingModule
+    MdInputModule
   ],
   providers: [ ],
   bootstrap: [AppComponent]

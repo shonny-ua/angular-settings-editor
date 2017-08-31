@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { SettingsService } from './settings.service';
 
@@ -8,12 +8,11 @@ import { Meta } from './meta';
   selector: 'app-settings',
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.css'],
-  providers: [SettingsService]//,
-  // pipes: [KeysPipe]
+  providers: [SettingsService]
 })
 export class SettingsComponent implements OnInit {
   meta: Meta;
-  settings: Object;
+  @Input() settings: Object;
 
   constructor(private settingsService: SettingsService) { }
 
@@ -29,4 +28,6 @@ export class SettingsComponent implements OnInit {
   getSettings(): void {
   	this.settingsService.getSettings().then(settings => this.settings = settings);
   }
+
+
 }
