@@ -21,12 +21,12 @@
 		<h3>{{group.caption}}</h3>
 		<div *ngFor="let groupItem of group.items">
 			<div *ngIf="groupItem.dataType == 'string'">
-				<md-input-container>
+				<md-form-field>
 					<input
 						mdInput
 						[placeholder]="groupItem.caption"
 						[(ngModel)]="settings[group.id][groupItem.id]" />
-				</md-input-container>
+				</md-form-field>
 			</div>
 		</div>
 	</div>

@@ -67,7 +67,7 @@ export class SettingsService {
 				caption: "Email settings",
 				items: [
 					{
-						id: "smptHost",
+						id: "smtpHost",
 						caption: "SMTP Host Address",
 						dataType: "string"
 					},				
