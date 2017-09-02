@@ -1,4 +1,4 @@
-export default class Editor {
+export class Editor {
   id: string;
   dataType: string;
   kind: string;

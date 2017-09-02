@@ -1,8 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { SettingsService } from './settings.service';
 
 import { Meta } from './meta';
+import { Group } from './group';
+import { Editor } from './editor';
 
 @Component({
   selector: 'app-settings',
@@ -12,7 +14,10 @@ import { Meta } from './meta';
 })
 export class SettingsComponent implements OnInit {
   meta: Meta;
-  @Input() settings: Object;
+  editors: Editor[];
+  groups: Group[];
+  settings: Object;
+
 
   constructor(private settingsService: SettingsService) { }
 
@@ -22,7 +27,13 @@ export class SettingsComponent implements OnInit {
   }
 
   getMeta(): void {
-  	this.settingsService.getMeta().then(meta => this.meta = meta);
+  	this.settingsService.getMeta().then(
+  		meta => {
+  			this.meta = meta;
+  			this.groups = meta.groups;
+  			this.editors = meta.editors;
+  		}
+  	);
   }
 
   getSettings(): void {

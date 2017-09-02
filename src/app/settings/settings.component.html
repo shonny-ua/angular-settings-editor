@@ -1,32 +1,67 @@
-<div style="float: right;"><p style="font-weight: bold;">Settings:</p>{{ settings | json }}
-	<div *ngFor="let setting of settings | keyval">
+<div style="float: right;"><p style="font-weight: bold;">Settings:</p>
+	<pre>{{ settings | json }}</pre>
+<!-- 	<div *ngFor="let setting of settings | keyval">
 		<div class="sub1">{{setting.key}}</div>
 		<div *ngFor="let setVal of setting.value | keyval">
 			<div class="sub2">{{ setVal.key }} - {{ setVal.value }}</div>
 		</div>
-	</div>
+	</div> -->
 </div>
-<p style="font-weight: bold;">Meta:</p>
 <div *ngIf="meta">
-	<div *ngFor="let editor of meta.editors">
+<!-- 	<div *ngFor="let editor of editors">
 		<div>{{editor.id}}</div>
 		<div class="sub1">{{editor.dataType}}</div>
 		<div class="sub1">{{editor.kind}}</div>
 		<div *ngFor="let editorItem of editor.items | keyval">
 			<div class="sub1">{{ editorItem.key }} - {{ editorItem.value }}</div>
 		</div>
-	</div>
+	</div> -->
 
-	<div *ngFor="let group of meta.groups">
+	<div *ngFor="let group of groups">
 		<h3>{{group.caption}}</h3>
 		<div *ngFor="let groupItem of group.items">
-			<div *ngIf="groupItem.dataType == 'string'">
-				<md-form-field>
-					<input
-						mdInput
-						[placeholder]="groupItem.caption"
-						[(ngModel)]="settings[group.id][groupItem.id]" />
-				</md-form-field>
+			<div *ngIf="groupItem.editor">
+				<div *ngIf="groupItem.editor | findEditor:editors as editor">
+					<div *ngIf="editor.kind == 'list'">
+						<editor-list
+							[editor]="editor"
+							[setting]="settings[group.id]"
+							[key]="groupItem.id"
+						></editor-list>
+					</div>
+				</div>
+				<div *ngIf="groupItem.editor == 'password'">
+					<md-form-field>
+						<input
+							mdInput
+							type="password"
+							[placeholder]="groupItem.caption"
+							[(ngModel)]="settings[group.id][groupItem.id]" />
+					</md-form-field>
+				</div>
+			</div>
+			<div *ngIf="!groupItem.editor">
+				<div *ngIf="groupItem.dataType == 'string'">
+					<md-form-field>
+						<input
+							mdInput
+							type="text"
+							[placeholder]="groupItem.caption"
+							[(ngModel)]="settings[group.id][groupItem.id]" />
+					</md-form-field>
+				</div>
+				<div *ngIf="groupItem.dataType == 'int'">
+					<md-form-field>
+						<input
+							mdInput
+							type="number"
+							[placeholder]="groupItem.caption"
+							[(ngModel)]="settings[group.id][groupItem.id]" />
+					</md-form-field>
+				</div>
+				<div *ngIf="groupItem.dataType == 'bool'" style="padding-top: 15px;">
+					<md-checkbox align="end" [(ngModel)]="settings[group.id][groupItem.id]">{{ groupItem.caption }}</md-checkbox>
+				</div>
 			</div>
 		</div>
 	</div>

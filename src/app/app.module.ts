@@ -11,18 +11,19 @@ import { KeyValPipe } from './lib/pipes/keyval';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-// import { IndexComponent } from './index/index.component';
 import { SettingsComponent } from './settings/settings.component';
-// import { SettingsService } from './settings/settings.service';
-
+import { EditorListComponent } from './settings/editor-list/editor-list.component';
+import { FindEditorPipe } from './settings/find-editor.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    // IndexComponent,
     SettingsComponent,
 
-    KeyValPipe
+    EditorListComponent,
+
+    KeyValPipe,
+    FindEditorPipe
   ],
   imports: [
     BrowserModule,

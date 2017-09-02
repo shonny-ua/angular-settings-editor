@@ -1,7 +1,7 @@
 import GroupItem from './groupitem';
 
 
-export default class Group {
+export class Group {
   id: string;
   caption: string;
   items: GroupItem[];
