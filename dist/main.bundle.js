@@ -20,7 +20,8 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRoutingModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__settings_settings_component__ = __webpack_require__("../../../../../src/app/settings/settings.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__index_index_component__ = __webpack_require__("../../../../../src/app/index/index.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__settings_settings_component__ = __webpack_require__("../../../../../src/app/settings/settings.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -29,11 +30,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 
 
-// import { IndexComponent } from './index/index.component';
+
 
 var routes = [
-    // { path: '', redirectTo: '/index', pathMatch: 'full' },
-    { path: 'settings', component: __WEBPACK_IMPORTED_MODULE_2__settings_settings_component__["a" /* SettingsComponent */] }
+    { path: '', redirectTo: '/index', pathMatch: 'full' },
+    { path: 'index', component: __WEBPACK_IMPORTED_MODULE_2__index_index_component__["a" /* IndexComponent */] },
+    { path: 'settings', component: __WEBPACK_IMPORTED_MODULE_3__settings_settings_component__["a" /* SettingsComponent */] }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
@@ -72,7 +74,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<md-toolbar color=\"primary\">\n  <button md-button routerLink=\"/settings\">\n    <md-icon md-font-library=\"material-icons\">settings</md-icon>\n    <span>SettingsEditor</span>\n  </button>\n</md-toolbar>\n<router-outlet></router-outlet>\n<!-- <h2>Here are some links to help you start: </h2>\n<ul>\n  <li>\n    <h2><a target=\"_blank\" href=\"https://angular.io/tutorial\">Tour of Heroes</a></h2>\n  </li>\n  <li>\n    <h2><a target=\"_blank\" href=\"https://github.com/angular/angular-cli/wiki\">CLI Documentation</a></h2>\n  </li>\n  <li>\n    <h2><a target=\"_blank\" href=\"https://blog.angular.io//\">Angular blog</a></h2>\n  </li>\n  \n</ul> -->\n\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<md-toolbar color=\"primary\">\n  <button md-button routerLink=\"/index\">\n    <md-icon md-font-library=\"material-icons\">explicit</md-icon>\n    <span>MetaConfig</span>\n  </button>\n  <button md-button routerLink=\"/settings\">\n    <md-icon md-font-library=\"material-icons\">settings</md-icon>\n    <span>SettingsEditor</span>\n  </button>\n</md-toolbar>\n<router-outlet></router-outlet>\n<!-- <h2>Here are some links to help you start: </h2>\n<ul>\n  <li>\n    <h2><a target=\"_blank\" href=\"https://angular.io/tutorial\">Tour of Heroes</a></h2>\n  </li>\n  <li>\n    <h2><a target=\"_blank\" href=\"https://github.com/angular/angular-cli/wiki\">CLI Documentation</a></h2>\n  </li>\n  <li>\n    <h2><a target=\"_blank\" href=\"https://blog.angular.io//\">Angular blog</a></h2>\n  </li>\n  \n</ul> -->\n\n"
 
 /***/ }),
 
@@ -121,14 +123,18 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__settings_settings_component__ = __webpack_require__("../../../../../src/app/settings/settings.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__settings_editor_list_editor_list_component__ = __webpack_require__("../../../../../src/app/settings/editor-list/editor-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__settings_find_editor_pipe__ = __webpack_require__("../../../../../src/app/settings/find-editor.pipe.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__settings_settings_service__ = __webpack_require__("../../../../../src/app/settings/settings.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__settings_editor_list_editor_list_component__ = __webpack_require__("../../../../../src/app/settings/editor-list/editor-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__settings_find_editor_pipe__ = __webpack_require__("../../../../../src/app/settings/find-editor.pipe.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__index_index_component__ = __webpack_require__("../../../../../src/app/index/index.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -151,9 +157,10 @@ AppModule = __decorate([
         declarations: [
             __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */],
             __WEBPACK_IMPORTED_MODULE_8__settings_settings_component__["a" /* SettingsComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__settings_editor_list_editor_list_component__["a" /* EditorListComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__settings_editor_list_editor_list_component__["a" /* EditorListComponent */],
             __WEBPACK_IMPORTED_MODULE_5__lib_pipes_keyval__["a" /* KeyValPipe */],
-            __WEBPACK_IMPORTED_MODULE_10__settings_find_editor_pipe__["a" /* FindEditorPipe */]
+            __WEBPACK_IMPORTED_MODULE_11__settings_find_editor_pipe__["a" /* FindEditorPipe */],
+            __WEBPACK_IMPORTED_MODULE_12__index_index_component__["a" /* IndexComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -163,12 +170,95 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_4__angular_material__["a" /* MaterialModule */],
             __WEBPACK_IMPORTED_MODULE_4__angular_material__["b" /* MdInputModule */]
         ],
-        providers: [],
+        providers: [__WEBPACK_IMPORTED_MODULE_9__settings_settings_service__["a" /* SettingsService */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
 //# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/index/index.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/index/index.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div style=\"width: 40%; float: right;\">\n\t<md-form-field style=\"width: 100%;\">\n\t\t<textarea\n\t\t\tstyle=\"width: 100%; min-height: 300px;\"\n\t\t\tmdInput\n\t\t\tplaceholder=\"Settings start value\"\n\t\t\t[(ngModel)]=\"settings\">\n\t\t</textarea>\n\t</md-form-field>\n</div>\n<div style=\"width: 40%;\">\n\t<md-form-field style=\"width: 100%;\">\n\t\t<textarea\n\t\t\tstyle=\"width: 100%; min-height: 300px;\"\n\t\t\tmdInput\n\t\t\tplaceholder=\"Meta start value\"\n\t\t\t[(ngModel)]=\"meta\">\n\t\t</textarea>\n\t</md-form-field>\n</div>\n<div style=\"clear: right;\">\n  <button md-button (click)=\"onSave()\">\n    <md-icon md-font-library=\"material-icons\">save</md-icon>\n    <span>Save start values</span>\n  </button>\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/index/index.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IndexComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__settings_settings_service__ = __webpack_require__("../../../../../src/app/settings/settings.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var IndexComponent = (function () {
+    function IndexComponent(settingsService) {
+        this.settingsService = settingsService;
+    }
+    IndexComponent.prototype.ngOnInit = function () {
+        this.getMeta();
+        this.getSettings();
+    };
+    IndexComponent.prototype.getMeta = function () {
+        var _this = this;
+        this.settingsService.getMeta().then(function (meta) {
+            _this.meta = JSON.stringify(meta, null, 2);
+        });
+    };
+    IndexComponent.prototype.getSettings = function () {
+        var _this = this;
+        this.settingsService.getSettings()
+            .then(function (settings) { return _this.settings = JSON.stringify(settings, null, 2); });
+    };
+    IndexComponent.prototype.onSave = function () {
+        this.settingsService.setMeta(JSON.parse(this.meta));
+        this.settingsService.setSettings(JSON.parse(this.settings));
+    };
+    return IndexComponent;
+}());
+IndexComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-index',
+        template: __webpack_require__("../../../../../src/app/index/index.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/index/index.component.css")],
+        providers: [__WEBPACK_IMPORTED_MODULE_1__settings_settings_service__["a" /* SettingsService */]]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__settings_settings_service__["a" /* SettingsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__settings_settings_service__["a" /* SettingsService */]) === "function" && _a || Object])
+], IndexComponent);
+
+var _a;
+//# sourceMappingURL=index.component.js.map
 
 /***/ }),
 
@@ -426,12 +516,12 @@ var META = {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SETTINGS; });
 var SETTINGS = {
     "subscriber": {
-        "name": "Imena.UA",
+        "name": "Example LTD.",
         "country": "ua",
         "receiveNotifications": true
     },
     "email": {
-        "smtpHost": "smtp.imena.ua",
+        "smtpHost": "smtp.example.ua",
         "smtpPort": 25,
         "smtpUsername": "vasya.pupkin",
         "smtpPassword": "password"
@@ -462,7 +552,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/settings/settings.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"float: right;\"><p style=\"font-weight: bold;\">Settings:</p>\n\t<pre>{{ settings | json }}</pre>\n<!-- \t<div *ngFor=\"let setting of settings | keyval\">\n\t\t<div class=\"sub1\">{{setting.key}}</div>\n\t\t<div *ngFor=\"let setVal of setting.value | keyval\">\n\t\t\t<div class=\"sub2\">{{ setVal.key }} - {{ setVal.value }}</div>\n\t\t</div>\n\t</div> -->\n</div>\n<div *ngIf=\"meta\">\n<!-- \t<div *ngFor=\"let editor of editors\">\n\t\t<div>{{editor.id}}</div>\n\t\t<div class=\"sub1\">{{editor.dataType}}</div>\n\t\t<div class=\"sub1\">{{editor.kind}}</div>\n\t\t<div *ngFor=\"let editorItem of editor.items | keyval\">\n\t\t\t<div class=\"sub1\">{{ editorItem.key }} - {{ editorItem.value }}</div>\n\t\t</div>\n\t</div> -->\n\n\t<div *ngFor=\"let group of groups\">\n\t\t<h3>{{group.caption}}</h3>\n\t\t<div *ngFor=\"let groupItem of group.items\">\n\t\t\t<div *ngIf=\"groupItem.editor\">\n\t\t\t\t<div *ngIf=\"groupItem.editor | findEditor:editors as editor\">\n\t\t\t\t\t<div *ngIf=\"editor.kind == 'list'\">\n\t\t\t\t\t\t<editor-list\n\t\t\t\t\t\t\t[editor]=\"editor\"\n\t\t\t\t\t\t\t[setting]=\"settings[group.id]\"\n\t\t\t\t\t\t\t[key]=\"groupItem.id\"\n\t\t\t\t\t\t></editor-list>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div *ngIf=\"groupItem.editor == 'password'\">\n\t\t\t\t\t<md-form-field>\n\t\t\t\t\t\t<input\n\t\t\t\t\t\t\tmdInput\n\t\t\t\t\t\t\ttype=\"password\"\n\t\t\t\t\t\t\t[placeholder]=\"groupItem.caption\"\n\t\t\t\t\t\t\t[(ngModel)]=\"settings[group.id][groupItem.id]\" />\n\t\t\t\t\t</md-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div *ngIf=\"!groupItem.editor\">\n\t\t\t\t<div *ngIf=\"groupItem.dataType == 'string'\">\n\t\t\t\t\t<md-form-field>\n\t\t\t\t\t\t<input\n\t\t\t\t\t\t\tmdInput\n\t\t\t\t\t\t\ttype=\"text\"\n\t\t\t\t\t\t\t[placeholder]=\"groupItem.caption\"\n\t\t\t\t\t\t\t[(ngModel)]=\"settings[group.id][groupItem.id]\" />\n\t\t\t\t\t</md-form-field>\n\t\t\t\t</div>\n\t\t\t\t<div *ngIf=\"groupItem.dataType == 'int'\">\n\t\t\t\t\t<md-form-field>\n\t\t\t\t\t\t<input\n\t\t\t\t\t\t\tmdInput\n\t\t\t\t\t\t\ttype=\"number\"\n\t\t\t\t\t\t\t[placeholder]=\"groupItem.caption\"\n\t\t\t\t\t\t\t[(ngModel)]=\"settings[group.id][groupItem.id]\" />\n\t\t\t\t\t</md-form-field>\n\t\t\t\t</div>\n\t\t\t\t<div *ngIf=\"groupItem.dataType == 'bool'\" style=\"padding-top: 15px;\">\n\t\t\t\t\t<md-checkbox align=\"end\" [(ngModel)]=\"settings[group.id][groupItem.id]\">{{ groupItem.caption }}</md-checkbox>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>\n<!-- <div *ngFor=\"let group of meta.groups\">\n\t<div>{{group.id}}</div>\n\t<div class=\"sub1\">{{group.caption}}</div>\n\t<div *ngFor=\"let groupItem of group.items\">\n\t\t<div class=\"sub1\">{{groupItem.id}}</div>\n\t\t<div class=\"sub2\">{{groupItem.caption}}</div>\n\t\t<div class=\"sub2\">{{groupItem.dataType}}</div>\n\t\t<div class=\"sub2\">{{groupItem.defVal}}</div>\n\t</div>\n</div> -->\n\n\n\n"
+module.exports = "<div style=\"float: right;\"><p style=\"font-weight: bold;\">Settings:</p>\n\t<pre>{{ settings | json }}</pre>\n<!-- \t<div *ngFor=\"let setting of settings | keyval\">\n\t\t<div class=\"sub1\">{{setting.key}}</div>\n\t\t<div *ngFor=\"let setVal of setting.value | keyval\">\n\t\t\t<div class=\"sub2\">{{ setVal.key }} - {{ setVal.value }}</div>\n\t\t</div>\n\t</div> -->\n</div>\n<div *ngIf=\"meta\">\n<!-- \t<div *ngFor=\"let editor of editors\">\n\t\t<div>{{editor.id}}</div>\n\t\t<div class=\"sub1\">{{editor.dataType}}</div>\n\t\t<div class=\"sub1\">{{editor.kind}}</div>\n\t\t<div *ngFor=\"let editorItem of editor.items | keyval\">\n\t\t\t<div class=\"sub1\">{{ editorItem.key }} - {{ editorItem.value }}</div>\n\t\t</div>\n\t</div> -->\n\n\t<div *ngFor=\"let group of groups\">\n\t\t<h3>{{group.caption}}</h3>\n\t\t<div *ngFor=\"let groupItem of group.items\">\n\t\t\t<div *ngIf=\"groupItem.editor\">\n\t\t\t\t<div *ngIf=\"groupItem.editor | findEditor:editors as editor\">\n\t\t\t\t\t<div *ngIf=\"editor.kind == 'list'\">\n\t\t\t\t\t\t<editor-list\n\t\t\t\t\t\t\t[editor]=\"editor\"\n\t\t\t\t\t\t\t[setting]=\"settings[group.id]\"\n\t\t\t\t\t\t\t[key]=\"groupItem.id\"\n\t\t\t\t\t\t></editor-list>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div *ngIf=\"groupItem.editor == 'password'\">\n\t\t\t\t\t<md-form-field>\n\t\t\t\t\t\t<input\n\t\t\t\t\t\t\tmdInput\n\t\t\t\t\t\t\ttype=\"password\"\n\t\t\t\t\t\t\t[placeholder]=\"groupItem.caption\"\n\t\t\t\t\t\t\t[(ngModel)]=\"settings[group.id][groupItem.id]\" />\n\t\t\t\t\t</md-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div *ngIf=\"!groupItem.editor\">\n\t\t\t\t<div *ngIf=\"groupItem.dataType == 'string'\">\n\t\t\t\t\t<md-form-field>\n\t\t\t\t\t\t<input\n\t\t\t\t\t\t\tmdInput\n\t\t\t\t\t\t\ttype=\"text\"\n\t\t\t\t\t\t\t[placeholder]=\"groupItem.caption\"\n\t\t\t\t\t\t\t[(ngModel)]=\"settings[group.id][groupItem.id]\" />\n\t\t\t\t\t</md-form-field>\n\t\t\t\t</div>\n\t\t\t\t<div *ngIf=\"groupItem.dataType == 'int'\">\n\t\t\t\t\t<md-form-field>\n\t\t\t\t\t\t<input\n\t\t\t\t\t\t\tmdInput\n\t\t\t\t\t\t\ttype=\"number\"\n\t\t\t\t\t\t\t[placeholder]=\"groupItem.caption\"\n\t\t\t\t\t\t\t[(ngModel)]=\"settings[group.id][groupItem.id]\" />\n\t\t\t\t\t</md-form-field>\n\t\t\t\t</div>\n\t\t\t\t<div *ngIf=\"groupItem.dataType == 'bool'\" style=\"padding-top: 15px;\">\n\t\t\t\t\t<md-checkbox [(ngModel)]=\"settings[group.id][groupItem.id]\">{{ groupItem.caption }}</md-checkbox>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>\n<!-- <div *ngFor=\"let group of meta.groups\">\n\t<div>{{group.id}}</div>\n\t<div class=\"sub1\">{{group.caption}}</div>\n\t<div *ngFor=\"let groupItem of group.items\">\n\t\t<div class=\"sub1\">{{groupItem.id}}</div>\n\t\t<div class=\"sub2\">{{groupItem.caption}}</div>\n\t\t<div class=\"sub2\">{{groupItem.dataType}}</div>\n\t\t<div class=\"sub2\">{{groupItem.defVal}}</div>\n\t</div>\n</div> -->\n\n\n\n"
 
 /***/ }),
 
@@ -489,8 +579,11 @@ var SettingsComponent = (function () {
         this.settingsService = settingsService;
     }
     SettingsComponent.prototype.ngOnInit = function () {
-        this.getMeta();
-        this.getSettings();
+        var _this = this;
+        Promise.all([
+            this.getMeta(),
+            this.getSettings()
+        ]).then(function () { return _this.fillSettingsByMeta(); });
     };
     SettingsComponent.prototype.getMeta = function () {
         var _this = this;
@@ -498,11 +591,36 @@ var SettingsComponent = (function () {
             _this.meta = meta;
             _this.groups = meta.groups;
             _this.editors = meta.editors;
+            return _this.meta;
         });
     };
     SettingsComponent.prototype.getSettings = function () {
         var _this = this;
-        this.settingsService.getSettings().then(function (settings) { return _this.settings = settings; });
+        this.settingsService.getSettings().then(function (settings) { return (_this.settings = settings); });
+    };
+    SettingsComponent.prototype.fillSettingsByMeta = function () {
+        var _this = this;
+        this.groups.forEach(function (group) {
+            if (!_this.settings[group.id]) {
+                _this.settings[group.id] = {};
+            }
+            group.items.forEach(function (item) {
+                if (typeof _this.settings[group.id][item.id] == 'undefined') {
+                    if (item.defVal) {
+                        _this.settings[group.id][item.id] = item.defVal;
+                    }
+                    else if (item.dataType == 'bool') {
+                        _this.settings[group.id][item.id] = false;
+                    }
+                    else if (item.dataType == 'int') {
+                        _this.settings[group.id][item.id] = 0;
+                    }
+                    else {
+                        _this.settings[group.id][item.id] = '';
+                    }
+                }
+            });
+        });
     };
     return SettingsComponent;
 }());
@@ -541,19 +659,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+var storedMeta = __WEBPACK_IMPORTED_MODULE_1__mock_meta__["a" /* META */];
+var storedSettings = __WEBPACK_IMPORTED_MODULE_2__mock_settings__["a" /* SETTINGS */];
 var SettingsService = (function () {
     function SettingsService() {
+        this.meta = storedMeta;
+        this.settings = storedSettings;
     }
     SettingsService.prototype.getMeta = function () {
+        var _this = this;
         return new Promise(function (resolve, reject) {
-            resolve(__WEBPACK_IMPORTED_MODULE_1__mock_meta__["a" /* META */]);
+            resolve(_this.meta);
         });
     };
     SettingsService.prototype.getSettings = function () {
+        var _this = this;
         return new Promise(function (resolve, reject) {
             // resolve(this.settings as Settings);
-            resolve(__WEBPACK_IMPORTED_MODULE_2__mock_settings__["a" /* SETTINGS */]);
+            resolve(_this.settings);
         });
+    };
+    SettingsService.prototype.setMeta = function (meta) {
+        storedMeta = meta;
+        this.meta = meta;
+        return this.getMeta();
+    };
+    SettingsService.prototype.setSettings = function (settings) {
+        storedSettings = settings;
+        this.settings = storedSettings;
+        return this.getSettings();
     };
     return SettingsService;
 }());

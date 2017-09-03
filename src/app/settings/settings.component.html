@@ -60,7 +60,7 @@
 					</md-form-field>
 				</div>
 				<div *ngIf="groupItem.dataType == 'bool'" style="padding-top: 15px;">
-					<md-checkbox align="end" [(ngModel)]="settings[group.id][groupItem.id]">{{ groupItem.caption }}</md-checkbox>
+					<md-checkbox [(ngModel)]="settings[group.id][groupItem.id]">{{ groupItem.caption }}</md-checkbox>
 				</div>
 			</div>
 		</div>

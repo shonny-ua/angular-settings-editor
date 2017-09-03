@@ -1,11 +1,11 @@
 export const SETTINGS = {
 	"subscriber" : {
-		"name": "Imena.UA",
+		"name": "Example LTD.",
 		"country": "ua",
 		"receiveNotifications": true
 	},
 	"email": {
-		"smtpHost": "smtp.imena.ua",
+		"smtpHost": "smtp.example.ua",
 		"smtpPort": 25,
 		"smtpUsername": "vasya.pupkin",
 		"smtpPassword": "password"

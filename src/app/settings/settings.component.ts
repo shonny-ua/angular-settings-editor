@@ -22,23 +22,45 @@ export class SettingsComponent implements OnInit {
   constructor(private settingsService: SettingsService) { }
 
   ngOnInit(): void {
-  	this.getMeta();
-  	this.getSettings();
+    Promise.all([
+      this.getMeta(),
+      this.getSettings()
+  ]).then(() => this.fillSettingsByMeta());
   }
 
   getMeta(): void {
-  	this.settingsService.getMeta().then(
-  		meta => {
-  			this.meta = meta;
-  			this.groups = meta.groups;
-  			this.editors = meta.editors;
-  		}
-  	);
+    this.settingsService.getMeta().then(
+      meta => {
+        this.meta = meta;
+        this.groups = meta.groups;
+        this.editors = meta.editors;
+        return this.meta;
+      }
+    );
   }
 
   getSettings(): void {
-  	this.settingsService.getSettings().then(settings => this.settings = settings);
+    this.settingsService.getSettings().then(settings => (this.settings = settings));
   }
 
-
+  fillSettingsByMeta(): void {
+    this.groups.forEach(group => {
+      if (!this.settings[group.id]) {
+        this.settings[group.id] = {};
+      }
+      group.items.forEach(item => {
+        if (typeof this.settings[group.id][item.id] == 'undefined') {
+         if (item.defVal) {
+           this.settings[group.id][item.id] = item.defVal;
+         } else if (item.dataType == 'bool') {
+           this.settings[group.id][item.id] = false;
+         } else if (item.dataType == 'int') {
+           this.settings[group.id][item.id] = 0;
+         } else {
+           this.settings[group.id][item.id] = '';
+         }
+        }
+      });
+    });
+  }
 }

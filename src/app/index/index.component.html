@@ -1,0 +1,26 @@
+<div style="width: 40%; float: right;">
+	<md-form-field style="width: 100%;">
+		<textarea
+			style="width: 100%; min-height: 300px;"
+			mdInput
+			placeholder="Settings start value"
+			[(ngModel)]="settings">
+		</textarea>
+	</md-form-field>
+</div>
+<div style="width: 40%;">
+	<md-form-field style="width: 100%;">
+		<textarea
+			style="width: 100%; min-height: 300px;"
+			mdInput
+			placeholder="Meta start value"
+			[(ngModel)]="meta">
+		</textarea>
+	</md-form-field>
+</div>
+<div style="clear: right;">
+  <button md-button (click)="onSave()">
+    <md-icon md-font-library="material-icons">save</md-icon>
+    <span>Save start values</span>
+  </button>
+</div>

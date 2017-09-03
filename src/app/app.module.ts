@@ -12,8 +12,10 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { SettingsComponent } from './settings/settings.component';
+import { SettingsService } from './settings/settings.service';
 import { EditorListComponent } from './settings/editor-list/editor-list.component';
 import { FindEditorPipe } from './settings/find-editor.pipe';
+import { IndexComponent } from './index/index.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { FindEditorPipe } from './settings/find-editor.pipe';
     EditorListComponent,
 
     KeyValPipe,
-    FindEditorPipe
+    FindEditorPipe,
+    IndexComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,7 @@ import { FindEditorPipe } from './settings/find-editor.pipe';
     MaterialModule,
     MdInputModule
   ],
-  providers: [ ],
+  providers: [ SettingsService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

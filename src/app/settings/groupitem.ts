@@ -1,4 +1,5 @@
 export default class GroupItem {
+  id: string;
   caption: string;
   dataType: string;
   editor: string;
