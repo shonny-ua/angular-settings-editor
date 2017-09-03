@@ -1,0 +1,18 @@
+<div *ngIf="type == 'number'">
+	<md-form-field>
+		<input
+			mdInput
+			type="number"
+			[placeholder]="groupItem.caption"
+			[(ngModel)]="settingsGroup[groupItem.id]" />
+	</md-form-field>
+</div>
+<div *ngIf="type != 'number'">
+	<md-form-field>
+		<input
+			mdInput
+			[type]="type"
+			[placeholder]="groupItem.caption"
+			[(ngModel)]="settingsGroup[groupItem.id]" />
+	</md-form-field>
+</div>

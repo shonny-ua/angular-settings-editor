@@ -1,0 +1,5 @@
+<md-select [placeholder]="editor.id" [(ngModel)]="settingsGroup[groupItem.id]">
+	<md-option *ngFor="let item of editor.items | keyval" [value]="item.key">
+		{{ item.value }}
+	</md-option>
+</md-select>

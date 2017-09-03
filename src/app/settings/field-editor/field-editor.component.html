@@ -1,0 +1,40 @@
+<div *ngIf="groupItem.editor">
+	<div *ngIf="groupItem.editor | findEditor:editors as editor">
+		<div *ngIf="editor.kind == 'list'">
+			<app-editor-list
+				[editor]="editor"
+				[groupItem]="groupItem"
+				[settingsGroup]="settingsGroup"
+			></app-editor-list>
+		</div>
+	</div>
+	<div *ngIf="groupItem.editor == 'password'">
+		<app-editor-input
+			type="password"
+			[groupItem]="groupItem"
+			[settingsGroup]="settingsGroup"
+		></app-editor-input>
+	</div>
+</div>
+<div *ngIf="!groupItem.editor">
+	<div *ngIf="groupItem.dataType == 'string'">
+		<app-editor-input
+			type="text"
+			[groupItem]="groupItem"
+			[settingsGroup]="settingsGroup"
+		></app-editor-input>
+	</div>
+	<div *ngIf="groupItem.dataType == 'int'">
+		<app-editor-input
+			type="number"
+			[groupItem]="groupItem"
+			[settingsGroup]="settingsGroup"
+		></app-editor-input>
+	</div>
+	<div *ngIf="groupItem.dataType == 'bool'">
+		<app-editor-bool
+			[groupItem]="groupItem"
+			[settingsGroup]="settingsGroup"
+		></app-editor-bool>
+	</div>
+</div>

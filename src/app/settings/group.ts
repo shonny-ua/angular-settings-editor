@@ -1,4 +1,4 @@
-import GroupItem from './groupitem';
+import { GroupItem } from './groupitem';
 
 
 export class Group {

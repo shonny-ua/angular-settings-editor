@@ -1,4 +1,4 @@
-export default class GroupItem {
+export class GroupItem {
   id: string;
   caption: string;
   dataType: string;

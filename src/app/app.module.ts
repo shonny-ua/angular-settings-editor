@@ -13,20 +13,27 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SettingsComponent } from './settings/settings.component';
 import { SettingsService } from './settings/settings.service';
-import { EditorListComponent } from './settings/editor-list/editor-list.component';
+
 import { FindEditorPipe } from './settings/find-editor.pipe';
 import { IndexComponent } from './index/index.component';
+import { FieldEditorComponent } from './settings/field-editor/field-editor.component';
+import { EditorListComponent } from './settings/field-editor/editor-list/editor-list.component';
+import { EditorInputComponent } from './settings/field-editor/editor-input/editor-input.component';
+import { EditorBoolComponent } from './settings/field-editor/editor-bool/editor-bool.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SettingsComponent,
 
-    EditorListComponent,
-
     KeyValPipe,
     FindEditorPipe,
-    IndexComponent
+    IndexComponent,
+
+    FieldEditorComponent,
+    EditorListComponent,
+    EditorInputComponent,
+    EditorBoolComponent,
   ],
   imports: [
     BrowserModule,
