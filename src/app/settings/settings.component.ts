@@ -49,8 +49,8 @@ export class SettingsComponent implements OnInit {
         this.settings[group.id] = {};
       }
       group.items.forEach(item => {
-        if (typeof this.settings[group.id][item.id] == 'undefined') {
-         if (item.defVal) {
+        if (typeof this.settings[group.id][item.id] === 'undefined') {
+         if (typeof item.defVal != 'undefined') {
            this.settings[group.id][item.id] = item.defVal;
          } else if (item.dataType == 'bool') {
            this.settings[group.id][item.id] = false;
